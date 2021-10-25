@@ -1,0 +1,183 @@
+body{
+    margin: 0px;
+}
+
+.container{
+    display: grid;
+}
+
+.nav-bar{
+    grid-template-columns: 5fr 1fr 1fr 1fr;
+    background-color: rgb(46, 29, 8);
+}
+
+#box1{
+    padding: 13px 0px 13px 5%;
+}
+.box{
+    padding: 13px 0px 13px 0px;
+    font-size: 15px;
+    font-family: "Century Gothic";
+    font-weight: 600;
+    color: whitesmoke;
+}
+
+.head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 45vh;
+    background-image: url('desk.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.heading>h1{
+    font-family: "Arial";
+    font-size: 50px;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.heading>p{
+    margin-top: 5px;
+    color: white;
+    font-family: cursive;
+    font-size: 16px;
+    text-align: center;
+}
+
+.add{
+    width: 80%;
+    margin: 20px auto;
+    grid-template-columns: 3fr 1fr;
+    font-family: "Century Gothic";
+}
+
+.item{
+    background-color: rgb(226, 226, 226);
+    margin: 2px;
+}
+.item>hr{
+    width: 95%;
+    margin: auto;
+    margin-bottom: 2px;
+}
+.input{
+    width: 50%;
+    font-size: 20px;
+    margin: 10px 15px;
+    border: none;
+    outline: none;
+    background: none;
+}
+.icon{
+    margin: 15px 0px 5px 10px;
+    color: rgb(136, 136, 136);
+}
+
+.tab{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn{
+    padding: 20px 50px;
+    border: none;
+    background-color: green;
+    color: white;
+    font-size: 15px;
+    font-family: "Century Gothic";
+    font-weight: 700;
+    outline: none;
+}
+
+.list{
+    grid-template-columns: repeat(2,auto);
+    width: 85%;
+    margin: auto;
+}
+
+.test{
+    margin: 10px;
+    font-size: 25px;
+    font-family: "Century Gothic";
+    color: rgb(48, 48, 48);
+    font-weight: 600;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 5px 5px 10px rgb(104, 104, 104);
+}
+
+.btn,.box,.test:hover,.del{
+    cursor: pointer;
+}
+
+.footer{
+    text-align: center;
+}
+
+.footer>.icon{
+    margin-top: 0px;
+}
+
+.footer>p{
+    margin-top: 20px;
+}
+
+.task{
+    width: 80%;
+    margin: auto;
+}
+
+.element{
+    width: 80%;
+    display: inline-block;
+    font-size: 20px;
+    font-family: "Century Gothic";
+    font-weight: 600;
+    background-color: rgb(253, 239, 221);
+    color: rgb(48, 48, 48);
+    padding: 15px;
+}
+
+.del{
+    background-color: rgb(253, 239, 221);
+    color: red;
+    font-size: 20px;
+    font-family: "Century Gothic";
+    font-weight: 700;
+    padding: 15px 10px 15px 0px;
+    border: none;
+    outline: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+
+@media (max-width: 630px){
+    .nav-bar{
+        grid-template-columns: repeat(3, auto);
+    }
+    .box{
+        text-align: center;
+    }
+    #box1{
+        display: none;
+    }
+    .btn{
+        margin-left: 20px;
+        padding: 13px 20px;
+    }
+    .input{
+        margin: 4px 10px;
+    }
+    .list{
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    {% load static %}
+    <link href="{% static 'main.css'%}" rel="stylesheet" type="text/css">
+    <link href="{% static 'custom.css'%}" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/b0bd5b73b2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-bar">
+            <div class="box" id="box1">TODO</div>
+            <a href="/home"><div class="box" >HOME</div></a>
+            <div class="box">ABOUT</div>
+            <div class="box">CONTACT</div>
+        </div>
+    </nav>
+
+
+    <header>
+        <div class="head">
+            <div class="heading">
+                <h1>TODO LIST</h1>
+                <p>Organise your thoughts! plural!</p>
+            </div>
+        </div>
+    </header>
+
+    <div class=" container add" style="border-bottom: 1px solid grey; color: rgb(48,48,48);">
+        <div><h1>{{title}} </h1></div>
+        <div class="tab"><h1><a href="/del/{{title}}"><i class="fas fa-trash" style="color: red;"></i></a></h1></div>
+    </div>
+
+    <form  method='POST' action="/list/{{title}}">
+        {% csrf_token %}
+        <div class="container add">
+            <div class="item"><i class="fa fa-plus fa-lg icon"></i><input type="text" placeholder="New task" class="input" name="new"><hr></div>
+            <div class="tab"><button type="submit" class="btn">Add</button></div>
+        </div>
+    </form>
+    
+    <div class="container task">
+        <ul style="padding:0px;">
+        {% for task in task%}
+            <li class="element">{{task.name}}</li><a href="/delete/{{task.name}}/{{title}}"><button class="del">X</button></a>
+        {% endfor %}
+        </ul>
+    </div>
+
+    <div class="container bottom">
+        <div class="index close" id="user" style="background-color: rgb(67, 67, 214);"><i class="fas fa-user fa-2x"></i></div>
+        <a href="/logout"><div class="index close" id="logout" style="background-color: rgb(189, 46, 46);"><i class="fas fa-sign-out-alt fa-2x"></i></div></a>
+        <div class="index" id="star" style="background-color: rgb(214, 230, 0);"><i class="fas fa-star fa-2x"></i></div>
+    </div>
+
+    <hr style="margin-top: 20px;">
+
+    <footer class="footer">
+        <p>todolist. All rights reserved &copy;</p>
+        <i class="fab fa-github fa-3x icon"></i>
+        <a href="https://www.instagram.com/_hr36_.kittu/"><i class=" fab fa-instagram fa-3x icon"></i></a>
+        <i class="fab fa-reddit fa-3x icon"></i>
+    </footer>
+
+    <div class="bgmodel">
+      <div class="bgcontent">
+          <div class="cross" id="cross">+</div>
+          <div class="kay">Username ={{username}}</div>
+          <div class="kay">Name ={{name}}</div>
+          <div class="kay">Mail ={{email}}</div>
+        </div>
+    </div>
+
+    <script src="{% static 'list.js' %}"></script>
+</body>
+</html>

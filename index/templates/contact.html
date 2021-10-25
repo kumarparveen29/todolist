@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    {% load static %}
+    <link href="{% static 'main.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'custom.css' %}" rel="stylesheet" type="text/css">
+    <script src="https://kit.fontawesome.com/b0bd5b73b2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-bar">
+            <div class="box" id="box1">TODO</div>
+            <a href="/"><div class="box">HOME</div></a>
+            <a href="/about"><div class="box">ABOUT</div></a>
+            <div class="box">CONTACT</div>
+        </div>
+    </nav>
+
+
+    <header>
+        <div class="head">
+            <div class="heading">
+                <h1>Contact Me</h1>
+                <p>Have questions? Ask Me.</p>
+            </div>
+        </div>
+    </header>
+
+    <form method="POST" action="/contact">
+        {% csrf_token %}
+        <div class="container contact">
+        <div class="cont"><input type="text" placeholder="Name" name="name"></div>
+        <div class="cont"><input type="tel" placeholder="Phone" name="tel"></div>
+        <div class="cont"><textarea placeholder="Message" name="msg"></textarea></div>
+        <div class="tab"><button type="submit" class="btn">SEND</button></div>
+        </div>
+    </form>
+
+    <div class="container bottom">
+        <div class="index close" id="user" style="background-color: rgb(67, 67, 214);"><i class="fas fa-user fa-2x"></i></div>
+        <a href="/logout"><div class="index close" id="logout" style="background-color: rgb(189, 46, 46);"><i class="fas fa-sign-out-alt fa-2x"></i></div></a>
+        <div class="index" id="star" style="background-color: rgb(214, 230, 0);"><i class="fas fa-star fa-2x"></i></div>
+    </div>
+    
+    <hr style="margin-top: 20px;">
+
+    <footer class="footer">
+        <p>todolist. All rights reserved &copy;</p>
+        <i class="fab fa-github fa-3x icon"></i>
+        <a href="https://www.instagram.com/_hr36_.kittu/"><i class=" fab fa-instagram fa-3x icon"></i></a>
+        <i class="fab fa-reddit fa-3x icon"></i>
+    </footer>
+
+    <div class="bgmodel">
+      <div class="bgcontent">
+          <div class="cross" id="cross">+</div>
+          <div class="kay">Username ={{username}}</div>
+          <div class="kay">Name ={{name}}</div>
+          <div class="kay">Mail ={{email}}</div>
+        </div>
+    </div>
+    
+    <script src="{% static 'list.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    {% load static %}
+    <link rel="stylesheet"  href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <link href="{% static 'login.css'%}" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="background">
+    <div class="container">
+        <div id="box1">SIGNUP
+        {% if messages %}
+            {% for message in messages %}
+                <p style="color:red;">{{message}}</p>
+            {% endfor %}
+        {% endif %}
+        </div>
+        <div id="box2">
+            <form method="post" action="/signup">
+            {% csrf_token %}
+                <div class="box"><i class="fa fa-user-plus icon"></i><input type="text" placeholder="Username" name="username" required></div>
+                <div class="box"><i class="fa fa-user icon"></i><input type="text" placeholder=" Name" name="name" required></div>
+                <div class="box"><i class="fa fa-envelope icon"></i><input type="email" placeholder="Email" name="email" required></div>
+                <div class="box"><i class="fa fa-key icon"></i><input type="text" placeholder="Password" name="password" required></div>
+                <div><button type="submit">SIGNUP</button></div>
+            </form>
+            <p>Have an account? <a href="login">Login</a></p>
+        </div>
+    </div>
+    </div>   
+</body>
+</html>
